@@ -3,7 +3,15 @@
 // `ng build --env=prod` then `environment.prod.ts` will be used instead.
 // The list of which env maps to which file can be found in `.angular-cli.json`.
 export const environment = {
-  production: false
+  production: false,
+
+  // development: false,
+  
+  api_url: "http://localhost:8090/speakup",
+  user_api_url: "/user",
+  register_api_url: "/register",
+  userExist_api_url: "/userExist"
+  
 };
 
 /*
@@ -12,4 +20,4 @@ export const environment = {
  * import the following file, but please comment it out in production mode
  * because it will have performance impact when throw error
  */
-// import 'zone.js/dist/zone-error';  // Included with Angular CLI.
+ import 'zone.js/dist/zone-error';  // Included with Angular CLI.

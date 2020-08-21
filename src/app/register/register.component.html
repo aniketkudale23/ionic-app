@@ -1,0 +1,116 @@
+
+
+
+
+  <ion-header>
+
+    <ion-toolbar>
+      <ion-title>register</ion-title>
+    </ion-toolbar>
+  
+  </ion-header>
+  
+
+  
+  <ion-content padding >
+      <ion-row class="picture_preview">
+          <ion-col>
+            <ion-img src="../../assets/images/shopping.jpeg"></ion-img>
+            </ion-col>
+            </ion-row>
+          </ion-content>
+          <ion-content padding>
+              <div>
+    
+      <!-- <ion-row class="picture_preview">
+          <ion-col>
+            <ion-img src="../../assets/images/shopping.jpeg"></ion-img>
+            </ion-col>
+            </ion-row> -->
+
+
+           
+    <form [formGroup]="SignupForm"  #registerForm="ngForm">
+        <ion-row>
+          
+            <ion-col></ion-col>
+          <ion-col col-8>
+            
+               <!-- <ion-label item-left >UserName</ion-label> -->
+                    <ion-input formControlName="userName" id="userName" placeholder="UserName" class="rounded" (ionBlur)="isUserNameValid()"></ion-input>
+                   
+          </ion-col>
+          <ion-col>
+              <span  id="errorUserName" class="warnings">
+                  Please Enter Vaild userName atleast 4 characters
+                </span>
+
+                <span  id="userNameInvalid" class="warnings">
+                    User Name Exist Please Use Another
+                  </span>
+
+          </ion-col>
+        </ion-row>
+              
+                <ion-row>
+                    <ion-col></ion-col>
+                    <ion-col col-8>
+                <ion-input type="text" formControlName="email" id="email" placeholder="Email" class="rounded" (ionBlur)="checkEmail()"></ion-input>
+                <!-- <span style="display: none">please enter valid email</span> -->
+                    </ion-col>
+                    <ion-col>
+                      <span  class="warnings" id="errorEmail">
+                        Please Enter Vaild Email
+                      </span>
+                    </ion-col>
+              </ion-row>
+          
+              <ion-row>
+                  <ion-col></ion-col>
+                  <ion-col col-8>              
+                <ion-input formControlName="password" id="password" placeholder="Password" class="rounded" ></ion-input>
+            </ion-col>
+            <ion-col>
+                <span  id="errorPassword" class="warnings">
+                    Please Enter Vaild Password 6 characters
+                  </span>
+            </ion-col>
+            </ion-row>
+
+
+            <ion-row>
+              <ion-col></ion-col>
+              <ion-col col-8>
+          <ion-input type="text" formControlName="contactNumber" id="contactNumber" placeholder="contactNumber" class="rounded" (ionBlur)="checkNumber()"></ion-input>
+          <!-- <span style="display: none">please enter valid email</span> -->
+              </ion-col>
+              <ion-col>
+                <span  class="warnings" id="errorContact">
+                  Please Enter Vaild ContactNumber
+                </span>
+              </ion-col>
+        </ion-row>
+       
+  
+      </form>
+      <ion-grid>
+          <ion-row>
+            <ion-col col-8></ion-col>
+            <ion-col  col-1>
+              <button ion-button color="light" style="text-align:center; background: lightblue" (click)="validate()">Sign Up</button>
+            </ion-col>
+            <ion-col col-1>
+            <button ion-button style="text-align:center; background: lightblue" (click)="geoLocationWatch()">Sign In</button>
+          </ion-col>
+            <ion-col col-2>
+              <span style="color: red">
+               userName And Password Should be 4 characters or great email should be valid!
+              </span>
+            </ion-col>
+  
+          </ion-row>
+        </ion-grid>
+          
+      
+      </div>
+  </ion-content>

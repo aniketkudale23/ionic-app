@@ -1,24 +1,50 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
+import { HomePage } from './home/home.page';
+import { RegisterComponent } from './register/register.component';
+import {ModuleWithProviders} from '@angular/core';
+import { LoginComponent } from './login/login.component';
+
 
 const routes: Routes = [
   {
-    path: '',
-    redirectTo: 'home',
-    pathMatch: 'full'
+    path: 'home',
+    redirectTo: '/home',
+    pathMatch: 'full',
+  
+    
   },
   {
     path: 'home',
-    loadChildren: './home/home.module#HomePageModule'
+    component: HomePage
+  },
+
+  {
+    path: '',
+    redirectTo: '/register',
+    pathMatch: 'full',
+  
+    
   },
   {
-    path: 'list',
-    loadChildren: './list/list.module#ListPageModule'
+    path: 'register',
+    component: RegisterComponent
+  },
+
+  {
+    path: 'login',
+    component: LoginComponent
   }
+
+  
+  // {
+  //   path: '/register',
+  //   component: RegisterComponent
+  // }
+ 
 ];
 
-@NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
-})
-export class AppRoutingModule {}
+
+//export class AppRoutingModule : ModuleWithProviders = RouterModule.forRoot(routes); 
+
+export const AppRoutingModule:   ModuleWithProviders = RouterModule.forRoot(routes); 

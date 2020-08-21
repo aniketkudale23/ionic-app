@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-
+import {NavController, NavParams} from '@ionic/angular';
 @Component({
   selector: 'app-list',
   templateUrl: 'list.page.html',
@@ -20,7 +20,7 @@ export class ListPage implements OnInit {
     'build'
   ];
   public items: Array<{ title: string; note: string; icon: string }> = [];
-  constructor() {
+  constructor(public navCtrl: NavController, public navParams: NavParams) {
     for (let i = 1; i < 11; i++) {
       this.items.push({
         title: 'Item ' + i,
@@ -36,4 +36,8 @@ export class ListPage implements OnInit {
   // navigate(item) {
   //   this.router.navigate(['/list', JSON.stringify(item)]);
   // }
+ 
+
+
 }
+
